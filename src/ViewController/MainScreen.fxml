@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewController.MainScreenController">
+   <children>
+      <TableView fx:id="customerTableView" layoutX="17.0" layoutY="424.0" prefHeight="234.0" prefWidth="736.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="150.0" />
+          <TableColumn fx:id="addressColumn" prefWidth="150.0" />
+            <TableColumn fx:id="address2Column" prefWidth="120.0" />
+            <TableColumn fx:id="cityColumn" prefWidth="97.60003662109375" />
+            <TableColumn fx:id="countryColumn" prefWidth="103.199951171875" />
+            <TableColumn fx:id="phoneColumn" prefWidth="113.5999755859375" />
+        </columns>
+      </TableView>
+      <ButtonBar layoutX="17.0" layoutY="664.0" prefHeight="40.0" prefWidth="244.0">
+        <buttons>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonHandler" text="Add" />
+            <Button fx:id="modifyButton" mnemonicParsing="false" onAction="#modifyButtonHandler" text="Modify" />
+          <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonHandler" text="Delete" />
+        </buttons>
+      </ButtonBar>
+      <Button fx:id="exitButton" layoutX="830.0" layoutY="688.0" mnemonicParsing="false" onAction="#exitButtonHandler" prefHeight="40.0" prefWidth="70" text="EXIT" />
+      <Button fx:id="reportsButton" layoutX="774.0" layoutY="557.0" mnemonicParsing="false" onAction="#reportsButtonHandler" prefHeight="30.0" prefWidth="160.0" text="Reports" />
+      <Button fx:id="summaryButton" layoutX="774.0" layoutY="500.0" mnemonicParsing="false" onAction="#summaryButtonHandler" prefHeight="30.0" prefWidth="160.0" text="Appt. Summary" />
+      <TabPane prefHeight="379.0" prefWidth="926.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="monthViewTab" text="Month View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="monthTableView" layoutX="14.0" layoutY="1.0" prefHeight="346.0" prefWidth="917.0">
+                          <columns>
+                            <TableColumn fx:id="apptTitle" prefWidth="200.0" text="Title" />
+                            <TableColumn fx:id="apptDescription" prefWidth="200.0" text="Description" />
+                              <TableColumn fx:id="apptLocation" prefWidth="200.0" text="Location" />
+                              <TableColumn fx:id="apptContact" prefWidth="145.0" text="Contact" />
+                              <TableColumn fx:id="apptDate" prefWidth="170.0" text="Date &amp; Time" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="weekViewTab" text="Week View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="weekTableView" layoutX="14.0" layoutY="1.0" prefHeight="346.0" prefWidth="916.0">
+                           <columns>
+                              <TableColumn fx:id="apptTitleWeek" prefWidth="200.0" text="Title" />
+                              <TableColumn fx:id="apptDescriptionWeek" prefWidth="200.0" text="Description" />
+                              <TableColumn fx:id="apptLocationWeek" prefWidth="200.0" text="Location" />
+                              <TableColumn fx:id="apptContactWeek" prefWidth="145.0" text="Contact" />
+                              <TableColumn fx:id="apptDateWeek" prefWidth="170.0" text="Date &amp; Time" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="getAppointmentsButton" layoutX="774.0" layoutY="438.0" mnemonicParsing="false" onAction="#getAppointmentsHandler" prefHeight="30.0" prefWidth="160.0" text="Get Appointments" />
+      <Text layoutX="36.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By default all appointments are shown. Please select a customer then hit &quot;Get Appointments&quot; Button to see appointments for Month/Week." />
+      <Button fx:id="logButton" layoutX="774.0" layoutY="616.0" mnemonicParsing="false" onAction="#logButtonHandler" prefHeight="30.0" prefWidth="160.0" text="Open Log" />
+   </children>
+</AnchorPane>

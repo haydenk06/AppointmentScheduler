@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewController.AddAppointmentScreenController">
+    <children>
+        <Label fx:id="addTitle" layoutX="10.0" layoutY="10.0" text="Add Appointment">
+            <font>
+                <Font name="Arial" size="25.0" />
+            </font>
+        </Label>
+        <Label fx:id="titleLabel" layoutX="15.0" layoutY="75.0" text="Title">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+        <TextField fx:id="titleTextField" layoutX="125.0" layoutY="65.0" prefHeight="40.0" prefWidth="260.0" promptText="Title">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font></TextField>
+      <Label fx:id="descriptionLabel" layoutX="15.0" layoutY="120.0" text="Description">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Label>
+      <TextArea fx:id="descriptionTextField" layoutX="125.0" layoutY="114.0" prefHeight="78.0" prefWidth="260.0" promptText="Description">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></TextArea>
+        <Label fx:id="locationLabel" layoutX="15.0" layoutY="211.0" text="Location">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="locationTextField" layoutX="125.0" layoutY="201.0" prefHeight="40.0" prefWidth="260.0" promptText="Location">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </TextField>
+        <Label fx:id="contactLabel" layoutX="15.0" layoutY="259.0" text="Contact">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="urlLabel" layoutX="15.0" layoutY="310.0" text="URL">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="urlTextField" layoutX="125.0" layoutY="298.0" prefHeight="40.0" prefWidth="260.0" promptText="URL">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </TextField>
+      <Label fx:id="dateLabel" layoutX="15.0" layoutY="355.0" text="Date">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePicker" layoutX="125.0" layoutY="348.0" prefHeight="30.0" prefWidth="161.0" />
+      <TextField fx:id="startTimeHourTextField" layoutX="125.0" layoutY="393.0" prefHeight="30.0" prefWidth="42.0" />
+      <Label layoutX="175.0" layoutY="400.0" text=":">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="startTimeMinuteTextField" layoutX="185.0" layoutY="393.0" prefHeight="30.0" prefWidth="42.0" />
+      <ChoiceBox fx:id="startAMPM" layoutX="238.0" layoutY="393.0" prefHeight="30.0" prefWidth="48.0">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:id="AM" fx:value="AM" />
+                  <String fx:id="PM" fx:value="PM" />
+              </FXCollections>
+          </items>
+      </ChoiceBox>
+      <Label fx:id="startTimeLabel" layoutX="15.0" layoutY="400.0" text="Start Time">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="endTimeHourTextField" layoutX="125.0" layoutY="436.0" prefHeight="30.0" prefWidth="42.0" />
+      <Label layoutX="175.0" layoutY="445.0" text=":">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="endTimeMinuteTextField" layoutX="185.0" layoutY="436.0" prefHeight="30.0" prefWidth="42.0" />
+        <ChoiceBox fx:id="endAMPM" layoutX="238.0" layoutY="436.0" prefHeight="30.0" prefWidth="48.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:id="AM" fx:value="AM" />
+                    <String fx:id="PM" fx:value="PM" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+      <Label fx:id="endTimeLabel" layoutX="15.0" layoutY="445.0" text="End Time" wrapText="true">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+        <TableView fx:id="addTableView" layoutX="425.0" layoutY="44.0" prefHeight="170.0" prefWidth="450.0">
+            <columns>
+                <TableColumn fx:id="addNameColumn" prefWidth="112.5" />
+                <TableColumn fx:id="addCityColumn" prefWidth="112.5" />
+                <TableColumn fx:id="addCountryColumn" prefWidth="112.5" />
+                <TableColumn fx:id="addPhoneColumn" prefWidth="112.5" />
+            </columns>
+        </TableView>
+        <Button fx:id="addButton" layoutX="800.0" layoutY="222.0" mnemonicParsing="false" onAction="#addButtonHandler" prefHeight="25.0" prefWidth="75.0" text="Add" />
+        <TableView fx:id="deleteTableView" layoutX="425.0" layoutY="258.0" prefHeight="170.0" prefWidth="450.0">
+            <columns>
+                <TableColumn fx:id="deleteNameColumn" prefWidth="112.5" />
+                <TableColumn fx:id="deleteCityColumn" prefWidth="112.5" />
+                <TableColumn fx:id="deleteCountryColumn" prefWidth="112.5" />
+                <TableColumn fx:id="deletePhoneColumn" prefWidth="112.5" />
+            </columns>
+        </TableView>
+        <Button fx:id="deleteButton" layoutX="800.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteButtonHandler" prefHeight="25.0" prefWidth="75.0" text="Delete" />
+        <Button fx:id="cancelButton" layoutX="800.0" layoutY="476.0" mnemonicParsing="false" onAction="#cancelButtonHandler" prefHeight="25.0" prefWidth="75.0" text="Cancel" />
+        <Button fx:id="saveButton" layoutX="714.0" layoutY="476.0" mnemonicParsing="false" onAction="#saveButtonHandler" prefHeight="25.0" prefWidth="75.0" text="Save" />
+      <Label layoutX="426.0" layoutY="4.0" text="Customers:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="contactTextField" layoutX="125.0" layoutY="247.0" prefHeight="40.0" prefWidth="260.0" promptText="Contact">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="typeLabel" layoutX="15.0" layoutY="481.0" text="Type" wrapText="true">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="typeCombo" layoutX="125.0" layoutY="476.0" prefHeight="26.0" prefWidth="162.0" />
+    </children>
+</AnchorPane>
