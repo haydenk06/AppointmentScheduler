@@ -1,4 +1,4 @@
-# AppointmentScheduler
+# Appoint (AppointmentScheduler)
 Java application for scheduling appointments
 
 Java Skills:
